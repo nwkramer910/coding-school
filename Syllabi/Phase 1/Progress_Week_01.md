@@ -1,20 +1,20 @@
 # Learning Progress Tracker
 
-**Last Updated:** [Date]  
+**Last Updated:** 11/17/2025
 **Current Phase:** Phase 1 - Consolidation & Confidence  
-**Week:** [Week # of 12]
+**Week:** Week 1 of 12
 
 ---
 
 ## This Week's Objectives
 
-**Date Range:** [Start Date] - [End Date]  
+**Date Range:** 11/17-11/23/2025  
 **Planned Hours:** 15
 
 ### Primary Goals
-1. [ ] Goal 1
-2. [ ] Goal 2
-3. [ ] Goal 3
+1. [ ] Understand at least one script thoroughly.
+2. [ ] Understand what database concepts the mentions.py script works with.
+3. [ ] Set up GitHub, .gitignore, README
 
 ### Learning Focus
 - **Topic:** [What you're learning this week]
@@ -26,7 +26,18 @@
 ## Daily Log
 
 ### Monday [Date]
-**Time Spent:** X hours  
+**Time Spent:** X hours
+
+**Beginning Reflection Questions:**
+- *What's the single most important thing for me to understand about my automation?*
+  - The problematic areas where a unit mention might not insert properly.
+
+- *What's the one database concept I'm shakiest on?*
+  - Too many to list.
+
+- *What's my biggest fear about this learning journey?*
+  - Burning out--from either going too fast, or from the syllabus being too slow.
+
 **Activities:**
 - 
 - 
