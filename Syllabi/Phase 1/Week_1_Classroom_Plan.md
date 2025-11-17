@@ -67,7 +67,7 @@ By the end of this week, you won't be a DBA, but you'll know which database ques
 
 ---
 
-## Your 4 Focus Areas This Week
+## Your 5 Focus Areas This Week
 
 ### Focus Area 1: Understanding Your Existing Scripts
 
@@ -190,6 +190,29 @@ When a unit mention doesn't insert, you can think through 3-4 possible causes in
 
 **Success Looks Like:**
 Your code is backed up, organized, and you can see the history of what you've done.
+
+---
+
+### Focus Area 5: GUI Development Basics
+
+**Primary Goal:** Understand what a GUI launcher would do for your team
+
+**Why This One Fifth:** GUI development builds on scripts, databases, and debugging. You'll touch it lightly this week to understand the opportunity.
+
+**This Week's Work:**
+
+**Thursday Session (Integrated, 20 min):** Research and planning
+- What tasks does your team do manually that could have a GUI?
+- What would a simple launcher look like?
+- Note initial ideas (don't build yet—just think)
+
+**Why Now:** You'll start GUI development in Week 4 once scripts and Git are solid. This week is just understanding the "why."
+
+**Deliverable by Friday:**
+- Notes on: "What could a GUI launcher do for my team?"
+
+**Success Looks Like:**
+You have 2-3 concrete ideas for how a GUI tool could help your team.
 
 ---
 
