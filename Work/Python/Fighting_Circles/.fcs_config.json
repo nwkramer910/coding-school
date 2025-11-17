@@ -1,0 +1,35 @@
+{
+  "shapefile_paths": {
+    "city_shp": "C:/Users/Nate/Documents/Scripts/isw_scripts/Workflow_Scripts/Fighting_Circles/citypoints.shp",
+    "frontline_shp": "C:/Users/Nate/Documents/Scripts/isw_scripts/Workflow_Scripts/Fighting_Circles/frontline_frontline.shp",
+    "bucket_shp": "C:/Users/Nate/Documents/Scripts/isw_scripts/Workflow_Scripts/Fighting_Circles/Collection Buckets.shp"
+  },
+  "bucket_field": "Name",
+  "heading_to_bucket_map": {
+    "Donetsk Oblast - Kostyantynivka-Druzhkivka tactical effort (Orikhovo-Vasylivka\u2014Zaliznyanske area and around to settlements east of Kazennyi Torets River)": "Kostyantynivka-Druzhkivka tactical effort",
+    "Donetsk Oblast - Novopavlivka (Solone-Muravka on the north to Tovste-Ivanivka on the south)": "Novopavlivka",
+    "Donetsk Oblast - Pokrovsk (bound on north by Bilystske-Svitle-Matyasheve area to the Udachne-Mekhova line)": "Pokrovsk",
+    "Donetsk Oblast - Velykomykhailivka (Piddubne-Andriivka Klevtsove on the north to Novosilka-Novoheorhiivka on the south)": "Western Donetsk and Eastern Zaporizhia directions",
+    "Kharkiv Oblast - Borova (Kolisnykivka-Olhivka thru Makiivka)": "Lyman",
+    "Kharkiv Oblast - General": "Kharkiv Oblast",
+    "Kharkiv Oblast - Kupyansk (international border to Hlushkivka)": "Kupyansk",
+    "Western Donetsk and Eastern Zaporizhia directions - Eastern Zaporizhia direction (Zelene Pole-Temyrivka down plus Hulyaipole direction)": "Western Donetsk and Eastern Zaporizhia directions",
+    "Western Donetsk and Eastern Zaporizhia directions - RU MoD claimed on NOV 7 that RUAF seized Uspenivka https://t.me/tass_agency/347407; https://t.me/mod_russia/58249; https://t.me/mod_russia/58252 ; https://t.me/otryadkovpaka/61772 ; https://t.me/z_arhiv/32737 ; https://t.me/rybar/75032": "Western Donetsk and Eastern Zaporizhia directions",
+    "Zaporizhia Oblast - General": "Zaporizhia Oblast"
+  },
+  "last_docx_dir": "C:\\Users\\Nate\\Downloads",
+  "distance_threshold": 15000,
+  "last_output_dir": "C:/Users/Nate/Documents/FCs/20251111",
+  "bucket_to_document_map": {
+    "Kharkiv Oblast": "Kharkiv Oblast - General",
+    "Kherson Oblast": "Crimea-Kherson axis (Southern Bug) - Kherson Oblast - General",
+    "Kostyantynivka-Druzhkivka tactical effort": "Donetsk Oblast - Kostyantynivka-Druzhkivka tactical effort (Orikhovo-Vasylivka\u2014Zaliznyanske area and around to settlements east of Kazennyi Torets River)",
+    "Kupyansk": "Kharkiv Oblast - Kupyansk (international border to Hlushkivka)",
+    "Lyman": "Donetsk Oblast - Lyman direction",
+    "Pokrovsk": "Donetsk Oblast - Pokrovsk (bound on north by Bilystske-Svitle-Matyasheve area to the Udachne-Mekhova line)",
+    "Siversk": "Donetsk Oblast - Siversk direction (Siversky Donets River on the north and Soledar on the south)",
+    "Velykomykhailivka": "Donetsk Oblast - Velykomykhailivka (Piddubne-Andriivka Klevtsove on the north to Novosilka-Novoheorhiivka on the south)",
+    "Western Donetsk and Eastern Zaporizhia directions": "Western Donetsk and Eastern Zaporizhia directions - Eastern Zaporizhia direction (Zelene Pole-Temyrivka down plus Hulyaipole direction)",
+    "Zaporizhia Oblast": "Zaporizhia Oblast - General"
+  }
+}

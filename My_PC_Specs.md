@@ -1,0 +1,14 @@
+Motherboard: ASRock Z790 Riptide WiFi LGA 1700(14th,13th,12th Gen) Intel Z790 SATA 6Gb/s ATX DDR5 1 PCIe 5.0 x16 2.5G LAN WiFi 7 + Bluetooth Motherboards - Intel
+
+CPU: INTEL 24 CORE I9-13900KF BX8071513900KF LGA1700 13TH GEN 36MB CACHE SRMBJ 36 TH
+
+Storage: 
+- Slot 1: Corsair MP600 CORE XT M.2 2280 2TB PCI-Express 4.0 x4 3D QLC Internal Solid State Drive Up to 5,000MB/sec (SSD) CSSD-F2000GBMP600CXT
+
+- Slot 2&3: 1TB SSD
+
+RAM: 4x G.SKILL Trident Z5 RGB Series 16 GB 288-Pin PC RAM DDR5 6400 (PC5 51200) Desktop Memory Model F5-6400J3239G16GX2-TZ5RK
+
+GPU: MSI Ventus GeForce RTX 4070 Ti SUPER 16GB GDDR6X PCI Express 4.0 ATX Graphics Card RTX 4070 Ti SUPER 16G VENTUS 2X OC
+
+OS: Windows 11
