@@ -1,21 +1,21 @@
-import psycopg2
-from datetime import datetime
-import re
+import psycopg2 #imports the library psycopg2, a library full of helper functions for PostgreSQL
+from datetime import datetime #imports the module datetime from the library datetime, to help unpack and create date data
+import re #Unknown library
 
-def parse_coordinates(coord_string):
+def parse_coordinates(coord_string): #the definition statement for the function parse_coordinates with the argument coord_string
     """
     Parse coordinates in format like "34.9433928°E 51.1356086°N"
     Returns (latitude, longitude) or None if invalid
     """
-    if not coord_string:
+    if not coord_string: #first conditional statement, stating what to do when the coord_string argument is empty
         return None
         
-    try:
-        parts = coord_string.strip().split()
+    try: #Attempting to read and normalize any coordinate data entered?
+        parts = coord_string.strip().split() #defining the two different part variables of the coord_string argument
         lat = None
         lon = None
         
-        for part in parts:
+        for part in parts: #for loop to recognize, strip, and format non-normalized coordinates
             clean = part.replace('°', '').strip()
             
             if 'N' in clean.upper():
@@ -27,15 +27,15 @@ def parse_coordinates(coord_string):
             elif 'W' in clean.upper():
                 lon = -float(clean.replace('W', '').replace('w', ''))
         
-        if lat is not None and lon is not None:
+        if lat is not None and lon is not None: #if statement to produce the normalize coordinate string
             return (lat, lon)
             
-    except Exception as e:
+    except Exception as e: #if the coordinates could not be parsed, returned in a print statement to notify the user of an issue
         print(f"Error parsing coordinates '{coord_string}': {e}")
     
     return None
 
-def batch_insert_unit_mentions(units_data):
+def batch_insert_unit_mentions(units_data): #definition statement for the function batch_insert_unit_mentions with the argument unit_data
     """
     Inserts unit mentions into unit_mentions table (Phase 2 workflow).
 
@@ -121,19 +121,23 @@ def batch_insert_unit_mentions(units_data):
         user="postgres",
         password="Sep10mber"
     )
-    cur = conn.cursor()
+    
+    #the above lines supply the connection to the database. the function connect is imported from psycopg2 (indicated by the '.') and takes multiple arguments
+    
+    
+    cur = conn.cursor() #the actual calls to set the connection
 
-    conn.set_session(autocommit=True)
+    conn.set_session(autocommit=True) 
 
     results = []
 
-    for unit in units_data:
+    for unit in units_data: #defining the set of variables for the variable unit
         try:
             location_geom = None
             adm4_pcode = None
             location_note = ""
 
-            # Auto-generate unknown unit keys if requested
+            # Auto-generate unknown unit keys if requested -- this if statement connects to Postgres, calls up a function that creates an uknown unit key, and returns the results with a print statement
             if 'unknown_unit_key' in unit and unit['unknown_unit_key'] in ['AUTO_A', 'AUTO_B']:
                 category = 'a' if unit['unknown_unit_key'] == 'AUTO_A' else 'b'
                 cur.execute("SELECT functions.generate_unknown_unit_key(%s)", (category,))
@@ -141,7 +145,7 @@ def batch_insert_unit_mentions(units_data):
                 unit['unknown_unit_key'] = generated_key
                 print(f"Auto-generated unknown unit key: {generated_key}")
 
-            # Handle observation_date
+            # Handle observation_date -- this if statement uses functions from datetime to produce an observation date, if none is provided, or makes one from the provided date string
             if 'observation_date' in unit:
                 if isinstance(unit['observation_date'], str):
                     obs_date = datetime.strptime(unit['observation_date'], '%Y-%m-%d %H:%M:%S')
@@ -150,21 +154,21 @@ def batch_insert_unit_mentions(units_data):
             else:
                 obs_date = datetime.now()
 
-            # Consolidate source_url from multiple possible fields
+            # Consolidate source_url from multiple possible fields -- this function checks which source type the unit mention needs and adds the source url into that field
             source_url = unit.get('source_url')
             if not source_url:
                 source_url = unit.get('ru_source') or unit.get('ua_source') or unit.get('geo_source')
 
-            # Tactical area ID (primary location method)
+            # Tactical area ID (primary location method) -- this function determines whether a unit location will be determined by the tactical_area_id field
             if 'tactical_area_id' in unit and unit['tactical_area_id']:
                 location_note = f"Tactical Area: {unit['tactical_area_id']}"
 
-            # Option 1: PCODE provided (legacy/optional)
+            # Option 1: PCODE provided (legacy/optional) -- same thing, but for the legacy pcode
             elif 'pcode' in unit and unit['pcode']:
                 settlement_pcode = unit['pcode']
                 location_note = f"PCODE: {settlement_pcode}"
 
-            # Option 2: Coordinate string provided (legacy/optional)
+            # Option 2: Coordinate string provided (legacy/optional) -- same thing, but for the legacy coordiante system
             elif 'coordinates' in unit and unit['coordinates']:
                 coords = parse_coordinates(unit['coordinates'])
                 if coords:
@@ -179,7 +183,7 @@ def batch_insert_unit_mentions(units_data):
                     })
                     continue
 
-            # Option 3: Direct lat/lon provided (legacy/optional)
+            # Option 3: Direct lat/lon provided (legacy/optional) -- same thing, but for the legacy coordiante system
             elif 'lat' in unit and 'lon' in unit:
                 lat = unit['lat']
                 lon = unit['lon']
@@ -190,7 +194,7 @@ def batch_insert_unit_mentions(units_data):
                 # No location data provided - this is acceptable
                 location_note = "No location data"
 
-            # Build analyst_notes (combining notes and location_note)
+            # Build analyst_notes (combining notes and location_note) -- this if statement creates the string analyst notes from inputs and the location_note variable
             analyst_notes = unit.get('analyst_notes') or unit.get('notes', '')
             if analyst_notes and location_note:
                 full_notes = f"{analyst_notes}. {location_note}"
@@ -199,7 +203,7 @@ def batch_insert_unit_mentions(units_data):
             else:
                 full_notes = analyst_notes
             
-            # INSERT INTO unit_mentions (append-only, no updates)
+            # INSERT INTO unit_mentions (append-only, no updates) -- this if statement adds the user-inputted fields into the unit_mentions table via a basic INSERT INTO script
             if location_geom:
                 cur.execute(f"""
                     INSERT INTO unit_mentions (
@@ -371,11 +375,13 @@ def batch_insert_unit_mentions(units_data):
     cur.close()
     conn.close()
 
+    #the above three lines add the data and then close the connection.
+    
     return results
 
 
 
-if __name__ == "__main__":
+if __name__ == "__main__": #the actual call to run the function
     units_test = [
         #218th TR
         {
