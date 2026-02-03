@@ -63,7 +63,7 @@
 - [X] Read Phase 1 Syllabus
 - [X] Read Week 1 Detailed Plan
 - [X] Answered reflection questions
-- [X] Blocked out schedule on calendar
+- [x] Blocked out schedule on calendar
 - [X] Created folder structure (optional)
 
 **What I Learned:**
@@ -81,22 +81,36 @@
 **Target:** 3-4 hours
 
 **Activities:**
-- [ ] Read mentions.py completely (1 hour)
-- [ ] Line-by-line understanding with annotations (1.5-2 hours)
+- [x] Read mentions.py completely (1 hour)
+- [x] Line-by-line understanding with annotations (1.5-2 hours)
 - [ ] Concept capture for Concept Library (30 min)
 - [ ] Log progress in this file (15 min)
 
 **What I Understood:**
-- 
+- The basic structure of all of the if and for statements, as well as what each section does and, to some degree, how it does it.
+- All of the import commands
+- The syntax for the `def` statements
 
 **What's Still Confusing:**
-- 
+- What is the `re` library?
+- `try`/`except` statements
+- What are Python classes? And what type of class is an Exception?
+- What is a tuple? 
+- Why one big function? Why not turn each if statement into a function?
+- How can a variable have the format `variable['str']`? What does that notation mean?
+- What does `f` mean?
 
 **Concepts Added to Library:**
 - [List 5-10 concepts you learned]
 
 **Blockers/Questions:**
-- 
+- How can a function be "of" a variable?
+- What do '[]' do?
+- Why one big function? Why not turn each if statement into a function?
+- What's the difference between a variable and a parameter?
+- Is the entire first function entirely unnecessary?
+- What is the cursor function? How does it relate to psycopg2?
+- Why does every Python function AI builds seem to use a function definition, then end with an `if main` statement?
 
 ---
 
