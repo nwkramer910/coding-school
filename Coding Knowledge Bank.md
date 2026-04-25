@@ -53,6 +53,15 @@ Code Block Example
 
 ## Functions
 
+### sorted()
+
+* parent module: Python 
+* connected objects: lists
+* function arguments: list object
+* function return value: a sorted list
+* when to use: when you want to sort your list but not alter the original list, assign a variable the sorted(list)
+* notes:
+
 ### ZipFile()
 
 * parent module: zipfile
@@ -246,6 +255,46 @@ Code Block Example
 * notes:
 
 ## Methods
+
+### union()
+
+* parent module: Python
+* connected objects: sets
+* method arguments: set object
+* method return value: union of both sets
+* notes: 
+
+### difference/intersection()
+
+* parent module: Python
+* connected objects: sets
+* method arguments: set objects
+* method return value: values in set a but not set b, or values in set a and b
+* notes: 
+
+### extend()
+
+* parent module: Python
+* connected objects: lists
+* method arguments: list object
+* method return value: adds values of a list to the end of the connected list
+* notes: 
+
+### insert()
+
+* parent module: Python
+* connected objects: lists
+* method arguments: index, value
+* method return value: value at desired index
+* notes: 
+
+### append()
+
+* parent module: Python 
+* connected objects: lists
+* method arguments: value
+* method return value: value to a list
+* notes: 
 
 ### extract/extractall()
 
