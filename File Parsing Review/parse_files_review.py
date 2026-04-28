@@ -6,17 +6,6 @@ from itertools import islice
 import zipfile
 
 p = Path(r'C:\Users\Nate\Documents\Shapefiles\ISW\Ukraine\Assessed_Russian_Infiltration_Areas_in_Ukraine')
-output_p = p.parent / 'Infils_test'
-print(f'output_p = {output_p}, {type(output_p)}')
-output_p.mkdir(parents=True, exist_ok=True)
-
-folder_paths = {
-    1 : 'Assessed_Russian_Infiltration_Areas_in_Ukraine',
-    2 : 'Russian_Advances_Shapefile',
-    3 : 'Russian_CoT_in_Ukraine_Shapefiles',
-    4 : 'Claimed_Ukrainian_Counteroffensives',
-    5 : 'Russian_Claimed_CoT'
-}
 
 # shutil.copytree(p, output_p, dirs_exist_ok=True)
 
@@ -35,6 +24,22 @@ folder_paths = {
 #     'DEC': '12'
 # }
 
+folder_paths = {
+    1 : 'Assessed_Russian_Infiltration_Areas_in_Ukraine',
+    2 : 'Russian_Advances_Shapefile',
+    3 : 'Russian_CoT_in_Ukraine_Shapefiles',
+    4 : 'Claimed_Ukrainian_Counteroffensives',
+    5 : 'Russian_Claimed_CoT'
+}
+
+new_output_dir = {
+    1 : 'Assessed_Russian_Infiltration_Areas_in_Ukraine',
+    2 : 'Assessed_Russian_Advances_in_Ukraine',
+    3 : 'Assessed_Russian_Controlled_Territory_in_Ukraine',
+    4 : 'Claimed_Ukrainian_Counteroffensives',
+    5 : 'Claimed_Russian_CoT'
+}
+
 shapefile_names = {
     1 : 'AssessedInfiltrationAreasinUkraine',
     2 : 'AssessedRussianAdvancesinUkraine',
@@ -49,6 +54,26 @@ print(f'user typed: {repr(shapefile)}')
 formatted_name = shapefile_names.get(shapefile, "Not in the defined range.")
 print(f'You have selected {formatted_name}.')
 
+output_p = p.parent / new_output_dir
+print(f'output_p = {output_p}, {type(output_p)}')
+output_p.mkdir(parents=True, exist_ok=True)
+
+
+ddmonyyyy = re.compile(r'\d{1,2}(?:JAN|FEB|MAR|APR|MAY|JUN|JUL|AUG|SEP|OCT|NOV|DEC)[a-z]*\d{4}', re.I) # UACoTMap
+monddyyyy = re.compile(r'(?:JAN|FEB|MAR|APR|MAY|JUN|JUL|AUG|SEP|OCT|NOV|DEC)[a-z]*\d{6}', re.I) # MONDDYYYY
+mondd = re.compile(r'(?:JAN|FEB|MAR|APR|MAY|JUN|JUL|AUG|SEP|OCT|NOV|DEC)[a-z]*\d{2}', re.I)  # MONDD 
+
+# TODO: Create date structure parsing w/ new date objects
+
+def try_ddmonyyyy():
+    
+def try_monddyyyy():
+    
+def try_mondd():
+    
+# TODO: Create no-date parsing
+
+def no_date():
 
 
 
