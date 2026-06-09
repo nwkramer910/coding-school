@@ -612,6 +612,7 @@ Cleans up otherwise messy open() / code() lines
 
 ### continue keyword
 
+
 **My Definition:**
 `continue` throws the code block back to the start of a loop. Think of it more like a "restart" keyword. 
 
@@ -631,3 +632,28 @@ This is useful when you have a while block with multiple conditions inside of it
 **Resources:**
 - [Link to documentation]
 - [Tutorial or article that helped]
+
+### Class v Instance Variables
+
+**My Definition:**
+* Each variable should be unique to either the class or instance, respectively
+
+**Why It Matters:**
+* [Why is this important for your work?]
+
+**Example Code:**
+```Language
+Code Block Example
+```
+
+* name of source script (if available): 
+
+**Common Mistakes:**
+[Gotchas you encountered or want to avoid]
+
+**Related Concepts:**
+*
+
+**Resources:**
+* [Link to documentation]
+* [Tutorial or article that helped]
