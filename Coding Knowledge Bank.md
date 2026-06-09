@@ -455,6 +455,41 @@ Code Block Example
 
 ## Modules
 
+### requests
+
+* major functions/methods: .get(), raise_for_status()
+* main applications: deals w/ HTTPs
+* notes: 
+* Documentation: <> 
+
+### webbrowser
+
+* major functions/methods: open()
+* main applications: opens tabs
+* notes: 
+* Documentation: <https://docs.python.org/3/library/webbrowser.html#module-webbrowser> 
+
+### Playwright
+
+* major functions/methods:  
+* main applications: web scraping
+* notes: 
+* Documentation: <> 
+
+### Selenium
+
+* major functions/methods:  
+* main applications: web scraping
+* notes: 
+* Documentation: <> 
+
+### Beautiful Soup (bs4)
+
+* major functions/methods: 
+* main applications: web scraping
+* notes: 
+* Documentation: <> 
+
 ### zipfile
 
 * major functions/methods: ZipFile()
